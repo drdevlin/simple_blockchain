@@ -1,4 +1,3 @@
-use chrono::Utc;
 use sha2::{Sha256, Digest};
 
 pub const PREFIX: &str = "00";
@@ -49,8 +48,8 @@ fn calculates_hash() {
   let hash = calculate_hash(
     69,
     1643220097,
-    &"0000f816a87f806bb0073dcf026a64fb40c946b5abee2573702828694d5b4c43".to_string(),
-    &"foo".to_string(),
+    "0000f816a87f806bb0073dcf026a64fb40c946b5abee2573702828694d5b4c43",
+    "foo",
     9386
   );
   assert_eq!(hash, "00007751f1b92a8ac1bdc88407e7a85b4c0dd59313d8fa78ae2208dbcaaad604".to_string());
@@ -61,8 +60,8 @@ fn mines_hash() {
   let (nonce, hash) = mine_hash(
     69,
     1643220097,
-    &"0000f816a87f806bb0073dcf026a64fb40c946b5abee2573702828694d5b4c43".to_string(),
-    &"foo".to_string()
+    "0000f816a87f806bb0073dcf026a64fb40c946b5abee2573702828694d5b4c43",
+    "foo"
   );
   assert_eq!(nonce, 9386);
   assert_eq!(hash, "00007751f1b92a8ac1bdc88407e7a85b4c0dd59313d8fa78ae2208dbcaaad604".to_string());

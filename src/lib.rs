@@ -1,12 +1,10 @@
-pub mod app;
-pub mod block;
-pub mod helpers;
+//! # Simple Blockchain
+//! 
+//! A simple blockchain inspired by [Mario Zupan](https://blog.logrocket.com/how-to-build-a-blockchain-in-rust/).
+pub use self::block::Block;
+pub use self::blockchain::Blockchain;
 
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-        let result = 2 + 2;
-        assert_eq!(result, 4);
-    }
-}
+pub mod block;
+pub mod blockchain;
+pub mod error;
+mod helpers;
